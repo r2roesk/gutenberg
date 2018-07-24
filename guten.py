@@ -112,7 +112,7 @@ def get20MostInterestingFrequentWords(file):
             word = word.lower()
 
         if word not in top100Words:
-            print word
+            print word, frequency
             counter += 1
 
         elif counter >= 20:
@@ -124,12 +124,12 @@ def get20LeastFrequentWords(file):
     leastFrequentWords = Counter(file.read().split()).most_common()
     counter = 0
 
-    for word in reversed(leastFrequentWords):
+    for word, freq in reversed(leastFrequentWords):
         if counter >= 20:
             break
 
         counter += 1
-        print word[0]
+        print word, freq
 
 def getFrequencyOfWord(file, word):
 
@@ -215,7 +215,7 @@ def main():
     #
     # file = open("gullivers.txt", "r")
     # getTotalNumberOfWords(file)
-
+    #
     # file = open("gullivers.txt", "r")
     # get20MostFrequentWords(file)
 
@@ -226,10 +226,10 @@ def main():
     # get20LeastFrequentWords(file)
 
     # file = open("gullivers.txt", "r")
-    # getFrequencyOfWord(file, "Gullivers")
+    # getFrequencyOfWord(file, "")
 
     # file = open("gullivers.txt", "r")
-    # getChapterQuoteAppears(file, "to behold my figure osfsften in")
+    # getChapterQuoteAppears(file, "Undoubtedly philosophers")
 
     file = open("gullivers.txt", "r")
     generateSentence(file)
